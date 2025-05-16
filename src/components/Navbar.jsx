@@ -8,17 +8,18 @@ const Navbar = () => {
     <AppBar
       position="static"
       sx={{
-        background: 'linear-gradient(90deg, #E3F2FD 0%, #BBDEFB 100%)', // Light blue gradient
-        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)', // Subtle shadow
-        color: '#1E1E1E', // Dark text for contrast
-        
+        background: 'linear-gradient(90deg, #E3F2FD 0%, #BBDEFB 100%)',
+        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+        color: '#1E1E1E',
+        width: '100%', // Ensure full width
       }}
     >
       <Toolbar
         sx={{
           justifyContent: 'space-between',
-          padding: { xs: '0 16px', md: '0 32px' }, // Responsive padding
-          minHeight: { xs: 56, md: 64 }, // Adjusted height for responsiveness
+          padding: { xs: '0', md: '0' }, // Remove padding to stretch to edges
+          minHeight: { xs: 56, md: 64 },
+          width: '100%', // Ensure full width
         }}
       >
         {/* Logo/Title Section */}
@@ -34,19 +35,20 @@ const Navbar = () => {
             display: 'flex',
             alignItems: 'center',
             gap: 1,
+            paddingLeft: 2, // Add small padding for aesthetics
           }}
         >
           <LocalHospitalIcon
             sx={{
-              fontSize: 40, // Larger hospital icon
-              color: '#2196F3', // Blue color for the icon
+              fontSize: 40,
+              color: '#2196F3',
             }}
           />
           Salud está en tus manos
         </Typography>
 
         {/* Navigation Links */}
-        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 4, alignItems: 'center' }}>
+        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 4, alignItems: 'center', paddingRight: 2 }}>
           <Button
             color="inherit"
             component={RouterLink}
@@ -57,7 +59,7 @@ const Navbar = () => {
               fontSize: '1rem',
               color: '#1E1E1E',
               '&:hover': {
-                color: '#2196F3', // Blue hover effect
+                color: '#2196F3',
                 backgroundColor: 'transparent',
               },
             }}
@@ -98,7 +100,6 @@ const Navbar = () => {
           >
             Citas
           </Button>
-
           <Button
             color="inherit"
             component={RouterLink}
